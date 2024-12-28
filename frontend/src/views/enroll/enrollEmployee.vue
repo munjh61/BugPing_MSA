@@ -125,7 +125,8 @@ const getMyAllContract = ()=> {
                 contract.work.company.companyId === work.company.companyId
             )
         })
-        showContract = [];
+        showContract.splice(0,showContract.length);
+        // showContract.value = Array(myCompanies.value.length).fill(false);//고침
         for(i in myCompanies){
             showContract.push(false);
         }
