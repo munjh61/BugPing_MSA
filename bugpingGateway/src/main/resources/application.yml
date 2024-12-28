@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: bugpingGateway
+  cloud:
+    gateway:
+      routes:
+        - id : ms1
+          uri: http://localhost:8707/
+          predicates:
+          - Path=/path1/**
+  eureka:
+    client:
+      register-with-eureka: 'true'
+      fetch-registry: 'true'
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+server:
+  port: 7777
