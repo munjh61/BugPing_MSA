@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mysql1:
+    image: mysql:8.0
+    container_name: mysql-container1
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: masterofmanagement1MSA
+      MYSQL_USER: catch
+      MYSQL_PASSWORD: bugping
+    ports:
+      - "3306:3306"  # 호스트의 3306 포트를 컨테이너의 3306 포트와 연결
+    volumes:
+      - mysql1-data:/var/lib/mysql
+    networks:
+      - mysql-network-1  # mysql1은 mysql-network-1 네트워크에 연결됨
+
+  mysql2:
+    image: mysql:8.0
+    container_name: mysql-container2
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: masterofmanagement2MSA
+      MYSQL_USER: catch
+      MYSQL_PASSWORD: bugping
+    ports:
+      - "3307:3306"  # 호스트의 3307 포트를 컨테이너의 3306 포트와 연결
+    volumes:
+      - mysql2-data:/var/lib/mysql
+    networks:
+      - mysql-network-2  # mysql2는 mysql-network-2 네트워크에 연결됨
+
+volumes:
+  mysql1-data:
+    driver: local
+  mysql2-data:
+    driver: local
+
+networks:
+  mysql-network-1:
+    driver: bridge  # mysql1이 연결된 네트워크
+  mysql-network-2:
+    driver: bridge  # mysql2가 연결된 네트워크
