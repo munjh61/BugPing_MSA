@@ -46,6 +46,7 @@ dependencies {
 	implementation 'com.google.zxing:core:3.5.0'
 	implementation 'com.google.zxing:javase:3.5.0'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 }
 
 tasks.named('test') {
