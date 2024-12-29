@@ -16,12 +16,13 @@ public class WorkResponseDTO {
     @Data
     public static class CompanyDTO {
         private Integer companyId;
-        private String name;
+        private String cname;
     }
 
     @Data
     public static class UserDTO {
         private String userId;
         private String name;
+        private String role;
     }
 }
