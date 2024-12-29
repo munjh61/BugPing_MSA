@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/connect/work")
+@RequestMapping("/notice/connect/work")
 public class RemoteWorkService {
 
     private final FinalProject1Client finalProject1Client;

@@ -8,7 +8,7 @@ spring:
           uri: http://localhost:8708/
           predicates:
           - Path=/notice/**
-        - id : ms1
+        - id: ms1
           uri: http://localhost:8707/
           predicates:
           - Path=/**
