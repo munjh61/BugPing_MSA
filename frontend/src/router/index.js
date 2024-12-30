@@ -22,6 +22,8 @@ import Home from "@/views/Home.vue";
 import QRCheck from "@/components/commute/QRCheck.vue";
 import AdministratorDailyCommuting from "@/views/commute/AdministratorDailyCommuting.vue";
 import AdminDailyWidget from "@/components/commute/AdminDailyWidget.vue";
+import NoticeMain2 from "@/views/notice2/NoticeMain2.vue";
+import NoticeCreate2 from "@/views/notice2/NoticeCreate2.vue";
 //import CommuteEmployee from "@/views/commute/CommuteEmployee.vue";
 
 const router = createRouter({
@@ -162,6 +164,18 @@ const router = createRouter({
           name: "AdministratorDailyCommuting",
           component: AdministratorDailyCommuting,
           meta: { title: "근무자 메인 페이지" },
+        },
+        {
+          path: "notice2",
+          name: "notice2",
+          component: NoticeMain2,
+          meta: {title: "게시판"}
+        },
+        {
+          path: "noticeCreate2",
+          name: "noticeCreate2",
+          component: NoticeCreate2,
+          meta: {title: "게시글 작성"},
         },
         //이 안에 넣으시면 됩니다.
       ],

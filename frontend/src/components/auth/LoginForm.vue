@@ -41,6 +41,7 @@ import { useUserStore } from '@/stores/userStore';
             //피니아 저장
             const userStore = useUserStore();
             userStore.setUserId(res.data.userId);
+            userStore.setUserName(res.data.userName);
             userStore.setEmail(res.data.email);
             userStore.setRoles(res.data.roles.split(","));
             const companyRes = await axios.get(`${axiosAddress}/api/getHeaderCompanyList`,{withCredentials : true})

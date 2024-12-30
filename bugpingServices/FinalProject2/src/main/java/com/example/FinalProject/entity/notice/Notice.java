@@ -29,9 +29,13 @@ public class Notice {
      * 작성자 정보를 참조하는 필드입니다.
      * Work 엔티티와 다대일 관계를 맺습니다.
      */
-    @ManyToOne
-    @JoinColumn(name = "work_id", nullable = false) // work_id는 공지사항의 작성자를 의미
-    private Work work;
+//    @ManyToOne
+//    @JoinColumn(name = "work_id", nullable = false) // work_id는 공지사항의 작성자를 의미
+//    private Work work;
+
+    private String userId;
+    private String userName;
+    private Integer companyId;
 
     private String title; // 공지사항 제목
 

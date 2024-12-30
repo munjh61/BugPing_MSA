@@ -52,9 +52,9 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults()) //명시적으로 cors 활성화
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth //페이지별 로그인 필수 페이지와, 아이디에 따라 접근 가능한 페이지 할당
-                        .requestMatchers("/api/**").hasAnyRole("employer","employee","admin")
-                        .requestMatchers("/employer/**").hasAnyRole("employer","admin")
-                        .requestMatchers("/employee/**").hasAnyRole("employee","admin")
+//                        .requestMatchers("/api/**").hasAnyRole("employer","employee","admin")
+//                        .requestMatchers("/employer/**").hasAnyRole("employer","admin")
+//                        .requestMatchers("/employee/**").hasAnyRole("employee","admin")
                         .anyRequest().permitAll()//로그인하지 않아도 접근 가능한 곳
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // JWT 인증 필터 추가

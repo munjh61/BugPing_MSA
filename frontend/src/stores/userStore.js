@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", {
   state: () => ({
     userId: "",
+    userName: "",
     roles: [],
     company: { cname: "", companyId: "" }, // 객체로 초기화
     companies: [],
@@ -10,6 +11,9 @@ export const useUserStore = defineStore("user", {
   actions: {
     setUserId(userId) {
       this.userId = userId;
+    },
+    setUserName(userName){
+      this.userName = userName;
     },
     setRoles(roles) {
       this.roles = roles;
